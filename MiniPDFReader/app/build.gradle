@@ -1,0 +1,33 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.example.minipdfreader'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.example.minipdfreader"
+        minSdk 21
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+
+dependencies {
+    // AndroidPdfViewer uses PdfiumAndroid under the hood
+    // Renders PDFs natively — no internet required
+    implementation 'com.github.barteksc:android-pdf-viewer:3.2.0-beta.1'
+}
